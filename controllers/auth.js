@@ -4,7 +4,7 @@ const db = require('../models');
 // POST REGISTER -- CREATE NEW USER
 
 const register = (req, res) => {
-    if (!req.body.firstName || !req.body.lastName || !req.body.email || !req.body.passwowrd) {
+    if (!req.body.firstName || !req.body.lastName || !req.body.email || !req.body.password) {
         return res.status(400).json({status: 400, message: 'Please fill out all the information'});
     }
 

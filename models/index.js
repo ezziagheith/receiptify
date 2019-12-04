@@ -1,9 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
 require('dotenv').config();
-
-
 const dbUrl = process.env.MONGODB_URI;
 
 mongoose.connect(dbUrl, {
@@ -18,4 +15,6 @@ mongoose.connect(dbUrl, {
 
 module.exports = {
     User: require('./User'),
+    Receipt: require('./Receipt'),
+    Store: require('./Store')
 }

@@ -12,13 +12,13 @@ const routes = require('./routes');
 
 // CORS -- Croos Origin Resource Sharing
 
-// const corseOptions = {
-//     origin: [`http://localhost:3000`],
-//     credentials: true,
-//     optionsSuccessStatus: 200
-// };
+const corseOptions = {
+    origin: [`http://localhost:3000`],
+    credentials: true,
+    optionsSuccessStatus: 200
+};
 
-// app.use(cors(corseOptions));
+app.use(cors(corseOptions));
 
 // BodyParser
 
@@ -45,5 +45,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/auth', routes.auth);
 app.use('/api/v1/users', routes.users);
+app.use('/api/v1/receipts', routes.receipts);
+app.use('/api/v1/stores', routes.stores)
 
 app.listen(process.env.PORT || 4000, () => console.log(`Server connected at http://localhost:${PORT}`));
