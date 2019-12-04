@@ -67,11 +67,32 @@ const login = (req, res) => {
     });
 };
 
+// POST Logout 
 
+const logout = (req, res) => {
+    console.log(req.session)
+    if (!req.session.currentUser) return res.status(401).json({ status: 401, message: 'Unauthorized'});
+    req.session.destroy((err) => {
+        if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again'});
+        res.sendStatus(200);
+    });
+};
+
+// Get Verify Current User
+
+const verify = (req, res) => {
+    if (!req.session.currentUser) return res.status(401).json({ status: 401, message: 'Unauthorized'});
+    res.status(200).json({
+        status: 200,
+        message: `Current user verified. User ID: ${req.session.currentUser.id}`
+    });
+};
 
 
 
 module.exports = {
     register,
     login,
+    verify,
+    logout
 }
