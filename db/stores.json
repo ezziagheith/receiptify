@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Target",
+        "logoImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Target_logo.svg/432px-Target_logo.svg.png",
+        "receipts": []
+    },
+    {
+        "name": "Amazon",
+        "logoImage": "https://amp.businessinsider.com/images/539f3ffbecad044276726c01-750-273.jpg",
+        "receipts": []
+    },
+    {
+        "name": "Sephora",
+        "logoImage": "https://1000logos.net/wp-content/uploads/2018/08/Sephora-Logo.png",
+        "receipts": []
+    },
+    {
+        "name": "Trader Joes",
+        "logoImage": "https://www.stickpng.com/img/icons-logos-emojis/iconic-brands/trader-joes-logo",
+        "receipts": []
+    },
+    {
+        "name": "Costco",
+        "logoImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Costco_Wholesale_logo_2010-10-26.svg/1280px-Costco_Wholesale_logo_2010-10-26.svg.png",
+        "receipts": []
+    },
+    {
+        "name": "Walmart",
+        "logoImage": "https://www.theshelbyreport.com/wp-content/uploads/2017/02/New_Walmart_Logo.svg-e1519222902338.jpg",
+        "receipts": []
+    },
+    {
+        "name": "Macys",
+        "logoImage": "https://westacres.com/wp-content/uploads/2018/10/macys_logo-390x262.jpg",
+        "receipts": []
+    },
+    {
+        "name": "Nordstrom",
+        "logoImage": "https://www.shop-eat-surf.com/wp-content/uploads/2019/08/nordstrom-logo-resized-600x338.jpg",
+        "receipts": []
+    },
+    {
+        "name": "Neiman Marcus",
+        "logoImage": "https://www.hospiceaustin.org/wp-content/uploads/2018/10/Neiman-Marcus-Logo-300x188.png",
+        "receipts": []
+    },
+    {
+        "name": "Louis Vuitton",
+        "logoImage": "https://i.ebayimg.com/images/g/9nUAAOSwTGZchnyc/s-l300.jpg",
+        "receipts": []
+    }
+]

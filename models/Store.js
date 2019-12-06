@@ -8,7 +8,11 @@ const StoreSchema = mongoose.Schema({
     },
     logoImage: {
         type: String,
-    }
+    },
+    receipts: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Receipt'
+    }]
 })
 
 const Store = mongoose.model('Store', StoreSchema);
