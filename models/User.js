@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const UserSchema = mongoose.Schema({
     firstName: {
@@ -18,6 +19,10 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: [true, 'Password is required'],
     },
+    receipts: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Receipt',
+    }]
 });
 
 const User = mongoose.model('User', UserSchema);

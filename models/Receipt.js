@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const ReceiptSchema = mongoose.Schema({
     receiptImage: {
         type: String,
-        required: [true, 'Image is required'],
     },
     description: {
         type: String,
@@ -20,6 +19,9 @@ const ReceiptSchema = mongoose.Schema({
     store: {
         type: Schema.Types.ObjectId,
         ref: 'Store',
+    },
+    body: {
+        type: String,
     }
 
 

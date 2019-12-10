@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const cors = require('cors');
+const upload = require('./upload')
 
 
 const app = express();
@@ -20,6 +21,9 @@ const corseOptions = {
 };
 
 app.use(cors(corseOptions));
+
+
+app.post('/upload', upload)
 
 // BodyParser
 

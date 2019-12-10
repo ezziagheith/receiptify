@@ -43,7 +43,7 @@ const showOneReceipt = (req, res) => {
 // Create Receipt
 
 const createReceipt = (req, res) => {
-    const newReceipt = {...req.body, user:req.params.userId, store: req.params.storeName} 
+    const newReceipt = {...req.body, user:req.params.userId, store: req.params.storeId} 
     db.Receipt.create(newReceipt, (err, createdReceipt) => {
         if (err) return res.status(500).json({
             status: 500,
@@ -61,14 +61,14 @@ const createReceipt = (req, res) => {
             if (err) return console.log(err)
             if (user) {
                 user.receipts.push(createdReceipt._id)
-                user.save((err, resilt) => {
+                user.save((err, result) => {
                     if (err) return console.log(err)
                     console.log(result)
                 })
             }
         })
         // FIND STORE - PUSH RECEIPT
-        db.Store.findOne({urlName:req.params.storeName}, (err, store) => {
+        db.Store.findById({_id:req.params.storeId}, (err, store) => {
             if (err) return console.log(err)
             if (store) {
                 store.receipts.push(createdReceipt._id)
