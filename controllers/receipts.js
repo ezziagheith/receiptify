@@ -5,6 +5,7 @@ const db = require('../models');
 
 const showReceipt = (req, res) => {
     db.Receipt.find({}, (err, allReceipt) => {
+        if (err) return res.status(500)
         if (err) return res.status(500).json({
             status:500,
             error: [{ message: 'Something went wrong! Please try again'}],
@@ -17,6 +18,10 @@ const showReceipt = (req, res) => {
         });
     });
 };
+
+
+
+
 
 // Show One Receipt
 
@@ -108,12 +113,18 @@ const usersReceipts = (req, res) => {
     db.User.findById({_id:req.params.id}, (err, foundUser) => {
         if (err) return res.status(500)
         if (foundUser) {
-            foundUser.populate("receipts").execPopulate((err, user) => {
+            foundUser.populate({
+                path: 'receipts',
+                populate: {
+                    path: 'store',
+                    model: 'Store'
+                }
+            }).execPopulate((err, user) => {
                 if (err) return res.status(500).json({err})
                 res.send({status: 200, receipts: user.receipts})
             })
         } else {
-            res.status(500).json({message: 'User not found'})
+            res.status(500).json({message: 'User not found'}) 
         }
     })
 }
